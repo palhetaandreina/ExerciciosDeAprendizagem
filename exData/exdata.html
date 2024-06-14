@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const epocaRef = 1900;
+			const mesRef = 1;
+			const diaRef = 1;
+
+			const primeiroBisexto = 1904;
+
+			const anoEsp = 2001;
+			const mesEsp = 7;
+			const diaEsp = 10;
+
+			const quantidadeAnosBisextos = Math.ceil((anoEsp - primeiroBisexto) / 4);
+			console.log('Quantidade de anos bisextos', quantidadeAnosBisextos);
+
+			var diferencaAnos = anoEsp - epocaRef;
+			console.log('Diferença anos', diferencaAnos);
+
+			var diferencaDias = diaEsp - diaRef;
+			console.log('Diferença dias', diferencaDias);
+
+			const diaEmMs = 1000 * 60 * 60 * 24;
+
+			var restMeses = 31 + 28 + 31 + 30 + 31 + 30;
+			console.log('Restante meses', restMeses);
+
+			const diasEmMs = (diferencaDias + restMeses + quantidadeAnosBisextos + diferencaAnos * 365) * diaEmMs;
+			console.log(diasEmMs);
+
+		</script>
+	</body>
+</html>
