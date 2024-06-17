@@ -1,0 +1,48 @@
+<script>
+  const anoRef = 1900;
+  const mesRef = 1;
+  const diaRef = 1;
+
+  const anoEsp = parseInt(prompt("Digite o ano em que você nasceu?"))
+  const mesEsp = parseInt(prompt("Digite o mês em que você nasceu?"))
+  const diaEsp = parseInt(prompt("Digite o dia em que você nasceu?"))
+
+  var contadorDias = 1;
+
+  for (var anoAtual = anoRef; anoAtual < anoEsp; anoAtual++) {
+    if ((anoAtual % 4 == 0 && anoAtual % 100 != 0) || anoAtual % 400 == 0) {
+      contadorDias = contadorDias + 366;
+    } else {
+      contadorDias = contadorDias + 365;
+    }
+  }
+
+  for (var mesAtual = 1; mesAtual < mesEsp; mesAtual++) {
+    // meses que possuem 31 dias
+    if (
+      mesAtual == 1 ||
+      mesAtual == 3 ||
+      mesAtual == 5 ||
+      mesAtual == 7 ||
+      mesAtual == 8 ||
+      mesAtual == 10 ||
+      mesAtual == 12
+    ) {
+      contadorDias = contadorDias + 31;
+    } else if (mesAtual == 2) {
+      // fevereiro
+      if ((anoEsp % 4 == 0 && anoEsp % 100 != 0) || anoEsp % 400 == 0) {
+        contadorDias = contadorDias + 29;
+      } else {
+        contadorDias = contadorDias + 28;
+      }
+    } else {
+      contadorDias = contadorDias + 30;
+    }
+  }
+
+  contadorDias = contadorDias + diaEsp
+  console.log(contadorDias)
+   alert("O valor inteiro da data inserida é: " + contadorDias)
+   
+</script>
