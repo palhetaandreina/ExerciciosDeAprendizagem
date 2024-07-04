@@ -1,0 +1,16 @@
+<script>
+	var frutas = ['melancia', 'banana', 'melão', 'manga', 'abacate', 'uva'];
+
+	for (var i = 0; i < frutas.length; i++) {
+		for (var j = 0; j < frutas.length; j++) {
+			const atual = frutas[j];
+			const proximo = frutas[j + 1];
+			if (atual > proximo) {
+				frutas[j] = proximo;
+				frutas[j + 1] = atual;
+			}
+		}
+	}
+
+	console.log(frutas);
+</script>
